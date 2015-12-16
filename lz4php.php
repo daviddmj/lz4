@@ -71,6 +71,8 @@ try {
 
     // Process each file
     foreach ($files as &$file) {
+        if (filesize($file) == 0) continue;
+
         // Set input file
         $lz4->setInputFile($file);
 
